@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя первая веб-страница</title>
+    <title>Визажист Томирис Рабимзатова</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .about {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .contact p {
+            margin: 5px 0;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: #ff6f61;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Привет, мир!</h1>
-    <p>Это моя первая HTML-страница.</p>
+
+<header>
+    <h1>Томирис Рабимзатова - Профессиональный Визажист</h1>
+</header>
+
+<div class="container">
+    <div class="about">
+        <h2>Обо мне</h2>
+        <p>Привет! Меня зовут Томирис Рабимзатова, я профессиональный визажист с более чем 3-летним опытом. Я специализируюсь на создании образов для свадеб, фотосессий и других особенных событий. Моя цель - подчеркнуть вашу естественную красоту и сделать вас уверенными в себе.</p>
+    </div>
+
+    <div class="gallery">
+        <h2>Мои работы</h2>
+        <img src="work1.jpg" alt="Работа 1">
+        <img src="work2.jpg" alt="Работа 2">
+        <img src="work3.jpg" alt="Работа 3">
+        <img src="work4.jpg" alt="Работа 4">
+        <img src="work5.jpg" alt="Работа 5">
+    </div>
+
+    <div class="contact">
+        <h2>Контактная информация</h2>
+        <p>Email: tomiris.kustova@mail.ru</p>
+        <p>Телефон: +7 (778) 378-59-89</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/totomik.mua" target="_blank">Instagram</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
