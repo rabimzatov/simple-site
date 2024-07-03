@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +7,8 @@
     <meta name="keywords" content="визажист, макияж, Томирис Рабимзатова, свадебный макияж, вечерний макияж, профессиональный визажист">
     <meta property="og:title" content="Визажист Томирис Рабимзатова">
     <meta property="og:description" content="Профессиональный визажист Томирис Рабимзатова. Макияж для любых мероприятий.">
-    <meta property="og:image" content="URL_вашего_изображения">
-    <meta property="og:url" content="URL_вашего_сайта">
+    <meta property="og:image" content="https://tomiart.kz/work1.jpg">
+    <meta property="og:url" content="https://tomiart.kz/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,6 +17,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></noscript>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>Визажист Томирис Рабимзатова</title>
     <style>
         body {
@@ -32,33 +32,25 @@
             padding: 20px;
             text-align: center;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .about {
+        .section {
+            padding: 60px 20px;
             text-align: center;
-            margin-bottom: 40px;
         }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+        .section:nth-child(even) {
+            background-color: #fff;
+        }
+        .section:nth-child(odd) {
+            background-color: #f2f2f2;
         }
         .gallery img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        .contact {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .contact p {
-            margin: 5px 0;
+        .gallery img:hover {
+            transform: scale(1.05);
         }
         .social-links {
             display: flex;
@@ -67,44 +59,71 @@
             margin-top: 20px;
         }
         .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: #e55b51;
+        }
+        .social-links a i {
+            font-size: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #ff6f61;
+            color: white;
             text-decoration: none;
-            color: #ff6f61;
-            font-size: 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #e55b51;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
-<body>
-    <!-- Ваше содержимое -->
-</body>
-</html>
-
 <body>
 
 <header>
     <h1>Томирис Рабимзатова - Профессиональный Визажист</h1>
 </header>
 
-<div class="container">
-    <div class="about">
-        <h2>Обо мне</h2>
-        <p>Привет! Меня зовут Томирис Рабимзатова, я профессиональный визажист с более чем 3-летним опытом. Я специализируюсь на создании образов для свадеб, фотосессий и других особенных событий. Моя цель - подчеркнуть вашу естественную красоту и сделать вас уверенными в себе.</p>
-    </div>
+<div class="section about fade-in">
+    <h2>Обо мне</h2>
+    <p>Привет! Меня зовут Томирис Рабимзатова, я профессиональный визажист с более чем 3-летним опытом. Я специализируюсь на создании образов для свадеб, фотосессий и других особенных событий. Моя цель - подчеркнуть вашу естественную красоту и сделать вас уверенными в себе.</p>
+</div>
 
-    <div class="gallery">
-        <h2>Мои работы</h2>
-        <img src="work1.jpg" alt="Работа 1">
-        <img src="work2.JPG" alt="Работа 2">
-        <img src="work3.JPG" alt="Работа 3">
-        <img src="work4.jpg" alt="Работа 4">
-    </div>
+<div class="section gallery fade-in">
+    <h2>Мои работы</h2>
+    <img src="work1.jpg" alt="Работа 1">
+    <img src="work2.JPG" alt="Работа 2">
+    <img src="work3.JPG" alt="Работа 3">
+    <img src="work4.jpg" alt="Работа 4">
+</div>
 
-    <div class="contact">
-        <h2>Контактная информация</h2>
-        <p>Email: tomiris.kustova@mail.ru</p>
-        <p>Телефон: +7 (778) 378-59-89</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/totomik.mua" target="_blank">Instagram</a>
-        </div>
+<div class="section contact fade-in">
+    <h2>Контактная информация</h2>
+    <p>Email: tomiris.kustova@mail.ru</p>
+    <p>Телефон: +7 (778) 378-59-89</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com/totomik.mua" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 </div>
 
