@@ -76,6 +76,34 @@
             border-radius: 6px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
+
+        .timeline-year {
+            position: absolute;
+            /* Фиксируем позицию */
+            left: 50%;
+            /* Делаем отступ слева, чтобы она не налезала на текст */
+            top: 100px;
+            /* Располагаем её вертикально */
+            font-size: 1.5rem;
+            /* Размер шрифта */
+            color: #731a0d;
+            /* Цвет */
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-year {
+                position: relative;
+                left: 0;
+                /* Убираем отступ слева на мобильных устройствах */
+                top: 10px;
+                /* Поднимаем зарубку немного вверх */
+                font-size: 1.2rem;
+                /* Уменьшаем размер шрифта на мобильных устройствах */
+                text-align: center;
+                /* Выравниваем текст по центру */
+            }
+        }
     </style>
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -152,7 +180,7 @@
                     </div>
                 </div>
                 <!-- Зарубка года -->
-                <div class="timeline-year" style="top: 100px;">какой-то год</div>
+                <div class="timeline-year" style="top: 100px;">1920-1930</div>
                 <!-- Правая часть: картинка напротив линии -->
                 <div class="md:w-5/12 mt-6 md:mt-0">
                     <div class="overflow-hidden h-64 rounded-xl shadow-md">
