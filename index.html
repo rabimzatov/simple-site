@@ -10,7 +10,6 @@
         @font-face {
             font-family: 'Satyr SP';
             src: url('fonts/SatyrSP.otf') format('opentype');
-            /* Убедись в правильном пути к файлу */
             font-weight: normal;
             font-style: normal;
         }
@@ -18,26 +17,28 @@
         .font-satyr {
             font-family: 'Satyr SP', serif;
         }
-    </style>
-    <style>
+
         .header-background {
             background-image: url('header.jpeg');
-            /* путь к изображению */
             background-size: cover;
-            /* растягивает изображение */
             background-position: bottom;
-            /* центрирует изображение */
             background-repeat: no-repeat;
+        }
+
+        body {
+            background-image: url('files/bck.jpg');
+            /* замените на ваш путь */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
 
         @media (min-width: 768px) {
             .header-background {
                 height: 200px;
-                /* Увеличиваем на больших экранах */
             }
         }
-    </style>
-    <style>
+
         @keyframes fade-in-up {
             from {
                 opacity: 0;
@@ -64,14 +65,25 @@
             height: 100%;
             background-color: hwb(220 58% 18%);
         }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+            font-size: 0.875rem;
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans">
     <header
         class="header-background bg-black h-72 flex items-center justify-center bg-opacity-80 shadow-md px-4 text-center">
-        <h1 class="text-6xl font-bold font-satyr text-white drop-shadow-lg">История
-            графического дизайна</h1>
+        <h1 class="text-6xl font-bold font-satyr text-white drop-shadow-lg">История графического дизайна</h1>
     </header>
 
     <main class="max-w-6xl mx-auto py-10 px-4 animate-fade-in-up">
@@ -83,186 +95,68 @@
         <div class="relative">
             <div class="timeline absolute left-1/2 top-0 bottom-0"></div>
 
-            <!-- Пример события -->
+            <!-- Зарубка года -->
+            <div class="timeline-year" style="top: 100px;">1440</div>
+
+            <!-- Событие с картинкой справа -->
             <div class="mb-16 flex flex-col md:flex-row justify-between items-center w-full group relative">
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
+                <!-- Левая часть: карточка -->
+                <div onclick="toggleCard(this)"
+                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md cursor-pointer transition-transform hover:-translate-y-2">
                     <h3 class="text-xl font-semibold">Появление печатного станка (около 1440)</h3>
                     <p class="mt-2 text-gray-700">Изобретение печатного станка стало основой для массового производства
                         шрифтов и книгопечатания.</p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
+                    <div class="mt-3 text-sm text-gray-600 hidden">
                         <p class="mt-1">Иоганн Гутенберг в 1440 году изобрёл печатный станок, что революционизировало
                             распространение информации и развитие графического дизайна.</p>
-                        <video class="mt-4 rounded-xl shadow-md" width="100%" controls>
-                            <source src="IMG_0488.MP4" type="video/mp4">
-                            Ваш браузер не поддерживает видео.
-                        </video>
-                    </details>
+                    </div>
+                </div>
+
+                <!-- Правая часть: картинка напротив линии -->
+                <div class="md:w-5/12 mt-6 md:mt-0">
+                    <img src="files/gutenberg.jpg" alt="Печатный станок" class="rounded-xl shadow-md w-full" />
                 </div>
             </div>
 
-            <!-- Следующие события вставляются аналогично, меняя описание -->
+            <!-- Зарубка года -->
+            <div class="timeline-year" style="top: 250px;">1440-1550</div>
 
-            <!-- Пример события -->
+            <!-- Событие с картинкой справа -->
             <div class="mb-16 flex flex-col md:flex-row-reverse justify-between items-center w-full group relative">
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold">Ренессанс и Возрождение (14–17 века)</h3>
-                    <p class="mt-2 text-gray-700">В эпоху Ренессанса дизайн начинает развиваться как искусство.</p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1">В этот период дизайн в первую очередь связан с изящными искусствами, и
-                            становится важной частью
-                            оформления книг и других произведений искусства. Появляются первые типографские шрифты, а
-                            искусство оформления страниц и книг значительно влияет на развитие графического дизайна.
-                            Ренессанс открыл путь к более осознанному и эстетически продуманному подходу к оформлению.
-                        </p>
-                        <img src="01davinchi.jpg" alt="описание" class="w-full rounded-lg mt-4 shadow" />
-                    </details>
+                <!-- Левая часть: карточка -->
+                <div onclick="toggleCard(this)"
+                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md cursor-pointer transition-transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold">Появление печатного станка (около 1440)</h3>
+                    <p class="mt-2 text-gray-700">Изобретение печатного станка стало основой для массового производства
+                        шрифтов и книгопечатания.</p>
+                    <div class="mt-3 text-sm text-gray-600 hidden">
+                        <p class="mt-1">Иоганн Гутенберг в 1440 году изобрёл печатный станок, что революционизировало
+                            распространение информации и развитие графического дизайна.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Событие слева -->
-            <div class="mb-16 flex flex-col md:flex-row justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold">Баухаус (1919–1933)</h3>
-                    <p class="mt-2 text-gray-700">Баухаус оказал огромное влияние на модернистский дизайн.</p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1">Баухаус был учебным заведением в Германии, которое революционизировало подход к
-                            дизайну. Его
-                            основатели, такие как Вальтер Гропиус, считали, что дизайн должен быть функциональным,
-                            доступным
-                            и простым. Баухаус стремился объединить искусство и технологию, что позволило создать
-                            дизайн,
-                            соответствующий потребностям массового производства и индустриализации. Его принципы нашли
-                            отражение в современном графическом дизайне, архитектуре и промышленном дизайне.</p>
-                        <iframe src="bauhaus.pdf" class="w-full h-[500px] mt-4 rounded-lg shadow"></iframe>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие справа -->
-            <div class="mb-16 flex flex-col md:flex-row-reverse justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold">ЗАГОЛОВОК</h3>
-                    <p class="mt-2 text-gray-700">КРАТКО</p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1">ПОДРОБНО</p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие слева -->
-            <div class="mb-16 flex flex-col md:flex-row justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие справа -->
-            <div class="mb-16 flex flex-col md:flex-row-reverse justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие слева -->
-            <div class="mb-16 flex flex-col md:flex-row justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие справа -->
-            <div class="mb-16 flex flex-col md:flex-row-reverse justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие слева -->
-            <div class="mb-16 flex flex-col md:flex-row justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие справа -->
-            <div class="mb-16 flex flex-col md:flex-row-reverse justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
-                </div>
-            </div>
-
-            <!-- Событие слева -->
-            <div class="mb-16 flex flex-col md:flex-row justify-between items-center w-full group relative">
-                <!-- Контент события -->
-                <div
-                    class="md:w-5/12 p-6 bg-white rounded-xl shadow-md group-hover:-translate-y-2 transition-transform">
-                    <h3 class="text-xl font-semibold"></h3>
-                    <p class="mt-2 text-gray-700"></p>
-                    <details class="mt-3 text-sm text-gray-600 cursor-pointer">
-                        <summary class="font-medium text-blue-600">Подробнее</summary>
-                        <p class="mt-1"></p>
-                    </details>
+                <!-- Правая часть: картинка напротив линии -->
+                <div class="md:w-5/12 mt-6 md:mt-0">
+                    <img src="printing-press.jpg" alt="Печатный станок" class="rounded-xl shadow-md w-full" />
                 </div>
             </div>
 
 
-
-
+            <!-- Другие события по образцу -->
 
         </div>
     </main>
+
+    <script>
+        function toggleCard(card) {
+            const detail = card.querySelector('div.mt-3');
+            if (detail.classList.contains('hidden')) {
+                detail.classList.remove('hidden');
+            } else {
+                detail.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 
 </html>
