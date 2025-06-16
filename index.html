@@ -112,9 +112,12 @@
 
 <body class="bg-gray-50 text-gray-900 font-sans w-full">
     <header
-        class="header-background bg-black h-72 flex items-center justify-center bg-opacity-80 shadow-md px-4 text-center">
-        <div class="absolute top-4 left-4 flex flex-col items-start">
-            <img src="logo.jpg" alt="Logo" class="w-52 h-52 object-contain" />
+        class="header-background bg-black h-72 flex items-center justify-center bg-opacity-80 shadow-md px-4 text-center relative">
+        <div class="absolute top-4 left-4 flex flex-col items-start z-10">
+            <a href="/" class="block">
+                <img src="logo.jpg" alt="Site Logo"
+                    class="w-40 h-40 md:w-52 md:h-52 object-contain hover:opacity-90 transition-opacity" />
+            </a>
             <div class="text-white text-sm md:text-base font-semibold bg-black/50 px-3 py-1 rounded mt-2">
                 Жуловчина Алина
             </div>
